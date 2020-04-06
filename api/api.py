@@ -103,4 +103,4 @@ api.add_resource(SongFile, '/api/song/<slug>')
 api.add_resource(SongArt, '/api/song/art/<slug>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
