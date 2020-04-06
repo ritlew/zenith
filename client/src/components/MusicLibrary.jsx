@@ -10,8 +10,6 @@ import 'ag-grid-community/dist/styles/ag-theme-balham-dark.css'
 import clsx from 'clsx'
 import ReactPlayer from 'react-player'
 
-import cover from './cover.png'
-
 const useStyles = theme => ({
   grid: {
     height: '100%',
