@@ -3,24 +3,15 @@ import React from 'react';
 import { 
   CssBaseline,
   Drawer, 
-  Box, 
-  AppBar, 
-  Toolbar, 
   List, 
   ListItem,
   ListItemIcon,
-  ListSubheader,
   ListItemText,
-  Typography,
   Divider,
   IconButton,
-  Badge,
   Container,
-  Grid,
-  Paper,
-  Link
 } from '@material-ui/core'
-import { LibraryMusic, Menu, ChevronLeft, Notifications } from '@material-ui/icons'
+import { LibraryMusic, ChevronLeft } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles';
 
 import clsx from 'clsx';
@@ -110,37 +101,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <Drawer
-      variant="permanent"
-      classes={{
-        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
-      }}
-      open={open}
-    >
-        <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeft />
-          </IconButton>
-        </div>
-        <List>
-          <ListItem button>
-            <ListItemIcon><LibraryMusic /></ListItemIcon>
-            <ListItemText primary="Library" />
-          </ListItem>
-        </List>
-        <Divider />
-      </Drawer>
       <main className={classes.content}>
         <Container maxWidth="lg" className={classes.container}>
             <MusicLibrary />
