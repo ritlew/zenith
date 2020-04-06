@@ -105,7 +105,7 @@ export default withStyles(useStyles)(
     }
 
     getSongs = () => {
-      fetch('http://localhost:3000/api/song/meta/')
+      fetch('/api/song/meta/')
         .then(response => response.json()).then(data => {
           this.songs = data
           this.setState({rowData: this.filterSongs(data)}, () => {
